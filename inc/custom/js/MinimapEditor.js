@@ -15,7 +15,7 @@ const MinimapEditor = () => {
     
         minimap.layers[layerIndex].items.push({
             id: getNewId("mi-item", layerIndex),
-            layerId: layerIndex + 1,
+            layerId: parseInt(layerIndex) + 1,
             x: x,
             y: y,
             sceneId: panorama[theme].default.firstScene
