@@ -1,5 +1,4 @@
 
-
 let { panorama, minimap } = getConfig();
 
 const Settings = ({ update }) => {
