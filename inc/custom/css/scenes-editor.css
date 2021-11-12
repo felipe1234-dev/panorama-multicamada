@@ -36,7 +36,6 @@
 
 .container {
   	position: relative;
-	flex: 1;
     width: 150px;
     max-width: 150px;
     height: 150px;
