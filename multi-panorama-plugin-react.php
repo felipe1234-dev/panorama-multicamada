@@ -2,7 +2,7 @@
 /**
  * Plugin name: Plugin Panoramas Multicamadas
  * Description: Adiciona widget de panorama no elementor. Correção de bugs, estouro de memória, código refeito e reorganizado, com novas funcionalidades no editor. Inspirado e trbalhado por cima do projeto de jvcalassio (a página dele: https://jvcalassio.github.io), dê um olá para ele e aproveita também para acessar a minha página!
- * Version: 1.2
+ * Version: 1.6
  * Author: felipe-alves-dev
  * Author URI: https://felipe1234-dev.github.io/felipe-portfolio/
  */
@@ -92,7 +92,7 @@ function load_admin_files() {
 	wp_enqueue_script(
         "panorama-minimap-editor", 
         plugin_dir_url(__FILE__)."inc/custom/js/MinimapEditor.js", 
-        false, "1.1", true
+        false, "1.2", true
     );
 	wp_enqueue_script(
         "panorama-scenes-editor", 
@@ -147,7 +147,7 @@ function load_production_files() {
     wp_enqueue_style(
         "panorama-style", 
         plugin_dir_url(__FILE__ )."inc/custom/css/panorama.css", 
-        false, "2.4", false
+        false, "2.6", false
     );
 }
 
@@ -317,7 +317,7 @@ function create_panorama($atts) {
 		);
 	}
 	
-	const Minimap = ({ big, setBig, layerIndex }) => {
+	const Minimap = ({ big, setBig, layerIndex, period, setLayerIndex }) => {
 		const [ratio, setRatio] = React.useState(0);
 		
 		React.useEffect(() => {
@@ -331,11 +331,6 @@ function create_panorama($atts) {
 		
 		const loadScene = sceneId => {
 			pano.loadScene(sceneId);
-			setBig(false);
-		}
-		
-		const changeLayer = newLayer => {
-			pano.loadScene(MINIMAP.layers[newLayer].items[0].sceneId);
 			setBig(false);
 		}
 		
@@ -360,32 +355,36 @@ function create_panorama($atts) {
 						width: ${MINIMAP.widthOpen};
 						max-width: ${MINIMAP.widthOpen} !important;
 					}
-
-					.pano-minimap.big {
-						left: 50%; 
-						bottom: 50%;
-						transform: translate(-50%, 50%);
+					
+					.pano-minimap .minimap-item {
+						width: ${MINIMAP.itemsWidth};
+						height: ${MINIMAP.itemsHeight};
+					}
+					
+					.pano-minimap.big .minimap-item {
+						width: ${MINIMAP.itemsWidthOpen};
+						height: ${MINIMAP.itemsHeightOpen};
 					}`}
 				</style>
 				<div 
 					onClick={() => setBig(!big)} 
 					className={`pano-minimap-exit${big ? " show" : ""}`}
 				></div>
-				<div 
-					className={`pano-minimap${big ? " big" : ""}`} 
-					onClick={() => setBig(!big)}
-				>
+				<div className={`pano-minimap${big ? " big" : ""}`}>
 					<div className="pano-layers-selector">
 						{MINIMAP.layers.map((layer, i) => (
 							<button 
 								className={layerIndex == i ? "selected" : ""} 
-								onClick={() => changeLayer(i)}
+								onClick={() => setLayerIndex(i)}
 							>
 								Pav. {i + 1}
 							</button>
 						))}
 					</div>
-					<div className="pano-minimap-portrait">
+					<div 
+						className="pano-minimap-portrait" 
+						onClick={() => setBig(!big)}
+					>
 						<img 
 							src={MINIMAP.layers[layerIndex].imgUrl} 
 							alt={`Minimapa do pavimento ${layerIndex + 1}`}
@@ -410,8 +409,9 @@ function create_panorama($atts) {
 							// miHeight = miHeight
 							
 							const miHeight = miWidth/ratio;
-							
-							const selectorHeight = 40; // px
+							 
+							const selector = document.querySelector(".pano-layers-selector");
+							const selectorHeight = selector ? selector.offsetHeight : 40; // px
 							
 							// miHeight*parseFloat(y)/100 + selectorHeight = newY*(miHeight + selectorHeight)
 							
@@ -531,6 +531,8 @@ function create_panorama($atts) {
 							big={miOpen}
 							setBig={setMiOpen}
 							layerIndex={layerIndex}
+							setLayerIndex={setLayerIndex}
+							period={period}
 						/>
 					</div>
 				)}
@@ -599,3 +601,4 @@ function add_shortcode_value($column, $post_id) {
     }
 }
 add_action("manage_posts_custom_column", "add_shortcode_value", 10, 2);
+?>
