@@ -1,0 +1,44 @@
+.minimap-wrapper {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.minimap-wrapper-img {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.minimap-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.minimap-img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.minimap-list-item {
+    margin-top: 5px;
+}

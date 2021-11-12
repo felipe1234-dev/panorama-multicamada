@@ -1,0 +1,266 @@
+.pnlm-controls-container {
+	top: unset !important;
+	left: unset !important;
+	bottom: 4px;
+	right: 4px;
+}
+
+.pnlm-panorama-info {
+	display: none !important;
+}
+
+.panorama-widget {
+    position: relative;
+}
+
+.panorama-buttons {
+    position: absolute;
+    z-index: 2;
+    margin-left: 4px;
+    padding-top: 4px;
+    display: flex;
+}
+
+.pnlm-panorama-info {
+	bottom: 0 !important;
+	right: 0 !important;
+}
+
+.pnlm-control:hover {
+    filter: invert(1) !important;
+}
+
+.panorama-toggle-button:focus {
+    outline: 0 !important;
+}
+
+.pano-minimap {
+    position: absolute;
+    cursor: pointer;
+    bottom: 20px;
+    left: 20px;
+    height: -moz-fit-content;
+    height: fit-content;
+    z-index: 3;
+    transition: opacity 0.3s ease, left 0.3s ease, bottom 0.3s ease,
+        max-width 0.3s ease, transform 0.3s ease, margin-left 0.3s ease;
+}
+
+.pano-layers-selector {
+	overflow: auto;
+  	white-space: nowrap;
+}
+
+.pano-layers-selector button, 
+.panorama-toggle-button {
+  	display: inline-block !important;
+	border: 3px solid transparent !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    line-height: 1.7 !important;
+    padding: 15px 30px !important;
+    text-decoration: none !important;
+	background-color: #28303d !important;
+	padding: 0 10px !important;
+	color: #fff !important;
+    transition: background-color 0.25s ease, color 0.25s ease !important;
+}
+
+.panorama-toggle-button>img {
+    filter: invert(1) !important;
+    width: 18px !important;
+    height: auto;
+    margin-top: -3px;
+}
+
+.pano-layers-selector button:hover, 
+.pano-layers-selector button.selected,
+.panorama-toggle-button:hover,
+.panorama-toggle-button.selected {
+	background-color: transparent !important;
+	border-color: #28303d !important;
+}
+
+.pano-minimap-portrait {
+    opacity: 0.8;
+    box-shadow: -1px 4px 15px 5px rgba(0, 0, 0, 0.46);
+}
+
+.pano-minimap-portrait:hover {
+    opacity: 1;
+}
+
+.pano-minimap-portrait>img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.minimap-item {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    font-size: 11px;
+    color: #fff;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.pano-minimap.big img {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .pano-minimap {
+        bottom: 4px;
+        left: 4px;
+    }
+
+    .minimap-item {
+        width: 4px;
+        height: 4px;
+        font-size: 7px;
+    }
+
+    .pano-minimap.big .minimap-item {
+        width: 10px;
+        height: 10px;
+        font-size: 11px;
+    }
+}
+
+.pano-minimap-exit {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.pano-minimap-exit.show {
+	display: block;
+}
+
+.custom-tooltip span {
+    visibility: hidden;
+    position: absolute;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    max-width: 200px;
+    padding: 5px 10px;
+    margin-left: -220px;
+    cursor: default;
+    font-size: 18px;
+}
+
+.custom-tooltip span h4 {
+	color: #fff !important;
+}
+
+.custom-tooltip:hover span {
+    visibility: visible;
+}
+
+.custom-tooltip:hover span:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    bottom: -20px;
+    left: -10px;
+    margin: 0 50%;
+}
+
+.custom-tooltip {
+    width: 29px;
+    height: 29px;
+}
+
+.custom-tooltip::after {
+    content: "";
+    background-size: cover;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 3px;
+    z-index: -1;
+}
+
+.custom-tooltip.r0::after {
+    transform: rotate(0deg);
+}
+
+.custom-tooltip.r45::after {
+    transform: rotate(45deg);
+}
+
+.custom-tooltip.r90::after {
+    transform: rotate(90deg);
+}
+
+.custom-tooltip.r135::after {
+    transform: rotate(135deg);
+}
+
+.custom-tooltip.r180::after {
+    transform: rotate(180deg);
+}
+
+.custom-tooltip.r225::after {
+    transform: rotate(225deg);
+}
+
+.custom-tooltip.r270::after {
+    transform: rotate(270deg);
+}
+
+.custom-tooltip.r315::after {
+    transform: rotate(315deg);
+}
+
+.pnlm-about-msg {
+    visibility: hidden;
+}
+
+.panorama-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #ded9d9ba;
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.pnlm-tooltip .hov-image-class {
+    transform: scale(0);
+    transition: transform 0.25s ease, visibility 0.25s ease;
+}
+
+div.pnlm-tooltip:hover .hov-image-class {
+    transform: scale(1);
+}
