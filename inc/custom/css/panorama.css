@@ -51,8 +51,29 @@
   	white-space: nowrap;
 }
 
-.pano-layers-selector button, 
-.panorama-toggle-button {
+.pano-layers-selector::-webkit-scrollbar {
+	height: 8px;
+	width: 8px;
+}
+
+/* Track */
+.pano-layers-selector::-webkit-scrollbar-track {
+  	background: transparent; 
+}
+ 
+/* Handle */
+.pano-layers-selector::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+ 	background: #888;
+}
+
+/* Handle on hover */
+.pano-layers-selector::-webkit-scrollbar-thumb:hover {
+  	background: #555;
+}
+
+.pano-layers-selector button {
+	text-transform: capitalize !important;
   	display: inline-block !important;
 	border: 3px solid transparent !important;
     border-radius: 0 !important;
@@ -68,18 +89,62 @@
 }
 
 .panorama-toggle-button>img {
-    filter: invert(1) !important;
     width: 18px !important;
     height: auto;
     margin-top: -3px;
 }
 
 .pano-layers-selector button:hover, 
-.pano-layers-selector button.selected,
-.panorama-toggle-button:hover,
-.panorama-toggle-button.selected {
+.pano-layers-selector button.selected {
 	background-color: transparent !important;
 	border-color: #28303d !important;
+}
+
+.panorama-buttons {
+	position: absolute;
+	z-index: 2;
+	margin-left: 4px;
+	padding-top: 4px;
+	display: flex
+}
+
+.panorama-toggle-button {
+	padding: 0 5px 0;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-color: rgba(0, 0, 0, .4);
+	border-radius: 3px;
+	cursor: pointer;
+	height: 28px;
+	font-family: sans-serif;
+	font-weight: 600;
+	margin-right: 5px
+}
+
+.panorama-toggle-button:hover,
+.panorama-toggle-button.selected {
+	background-color: #f8f8f8;
+	filter: invert(1);
+	color: #000
+}
+
+.pnlm-control {
+	transition: background-color .25s ease, color .25s ease
+}
+
+.pnlm-control:hover {
+	filter: invert(1)
+}
+
+.panorama-toggle-button:focus {
+	outline: 0
+}
+
+.panorama-toggle-button>img {
+	width: 18px;
+	height: auto;
+	margin-top: -3px
 }
 
 .pano-minimap-portrait {
@@ -118,6 +183,12 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+.pano-minimap.big {
+    left: 50%; 
+    bottom: 50%;
+    transform: translate(-50%, 50%);
 }
 
 .pano-minimap.big img {
