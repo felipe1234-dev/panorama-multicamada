@@ -24,12 +24,12 @@ const HotSpotsEditor = ({ update, reloadPan }) => {
 		update({ panorama: panorama, minimap: minimap });
 	}
 
-    const addHotspot = () => event => {
+    const addHotspot = event => {
         event.preventDefault();
         
 		const currentScene = panEditor.getScene();
         
-		let { layerId, hotSpots } = panorama[theme].scenes[currentScene];
+		let { layerId } = panorama[theme].scenes[currentScene];
 		
 		const layerIndex = getLayerIndex(layerId);
 		const newId = getNewId("hotSpots", layerIndex);
@@ -50,8 +50,9 @@ const HotSpotsEditor = ({ update, reloadPan }) => {
             createTooltipFunc: tooltipConstructor
         }
     
-        hotSpots.push(newHotSpot);
-		console.log(newHotSpot)
+        panorama[theme].scenes[currentScene].hotSpots.push(newHotSpot);
+		panorama[theme].scenes[currentScene].hotSpots.splice(panorama[theme].scenes[currentScene].hotSpots.length - 1, 1);
+		
         panEditor.addHotSpot(newHotSpot);
     
         update({ panorama: panorama, minimap: minimap });
@@ -80,7 +81,7 @@ const HotSpotsEditor = ({ update, reloadPan }) => {
                 
                 <button
                     className="button button-primary" 
-                    onClick={addHotspot()}
+                    onClick={e => addHotspot(e)}
                 >
                     Adicionar hotspot
                 </button>
@@ -123,12 +124,28 @@ const HotSpot = ({ i, id, sceneId: targetScene, angle, pitch, yaw, hovImage, tex
         const tooltipArgs = JSON.parse(createTooltipArgs);
         const { title, url } = tooltipArgs;
 
-        createTooltipArgs = JSON.stringify({ title: value, url: url });
-        text = value;
+        panorama[theme].scenes[currentScene].hotSpots[i].createTooltipArgs = JSON.stringify({ title: value, url: url });
+        panorama[theme].scenes[currentScene].hotSpots[i].text = value;
     
         update({ panorama: panorama, minimap: minimap });
     }
+	
+	const editHovImage = () => event => {
+        const url = event.target.value;
+        const currentScene = panEditor.getScene();
 
+		const { sceneId: targetScene } = panorama[theme].scenes[currentScene].hotSpots[i];
+
+        panorama[theme].scenes[currentScene].hotSpots[i].hovImage = url;
+		panorama[theme].scenes[currentScene].hotSpots[i].text = panorama[theme].scenes[targetScene].title;
+        panorama[theme].scenes[currentScene].hotSpots[i].createTooltipArgs = JSON.stringify({
+        	title: panorama[theme].scenes[targetScene].title,
+            url: url
+   	    });
+				
+        update({ panorama: panorama, minimap: minimap });
+	}
+	
     const addHovImage = () => event => {
         event.preventDefault();
     
@@ -141,7 +158,7 @@ const HotSpot = ({ i, id, sceneId: targetScene, angle, pitch, yaw, hovImage, tex
         
         const uploader = {
             config: {
-                title: "Selecione a imagem para a prévia",
+                title: "Selecione a imagem para a prévia (Altere de cena e retorne à mesma para ver as mudanças!)",
                 library: {
                     type: ["image"]
                 },
@@ -155,19 +172,16 @@ const HotSpot = ({ i, id, sceneId: targetScene, angle, pitch, yaw, hovImage, tex
                 const currentScene = panEditor.getScene();
                 const { url } = attachment;
 
-                let { 
-                    sceneId: targetScene, 
-                    hovImage, 
-                    createTooltipArgs 
-                } = panorama[theme].scenes[currentScene].hotSpots[i];
+                const { sceneId: targetScene } = panorama[theme].scenes[currentScene].hotSpots[i];
 
-                hovImage = url;
-                createTooltipArgs = JSON.stringify({
+                panorama[theme].scenes[currentScene].hotSpots[i].hovImage = url;
+				panorama[theme].scenes[currentScene].hotSpots[i].text = panorama[theme].scenes[targetScene].title;
+                panorama[theme].scenes[currentScene].hotSpots[i].createTooltipArgs = JSON.stringify({
                     title: panorama[theme].scenes[targetScene].title,
                     url: url
                 });
-                
-                update({ panorama: panorama, minimap: minimap }, true);
+				
+                update({ panorama: panorama, minimap: minimap });
             }
         }
 
@@ -277,7 +291,7 @@ const HotSpot = ({ i, id, sceneId: targetScene, angle, pitch, yaw, hovImage, tex
             </select>
 
             <input 
-                onChange={propChange()}
+                onChange={editHovImage()}
                 type="text" 
                 name="hov-image" 
                 value={hovImage} 
@@ -289,11 +303,15 @@ const HotSpot = ({ i, id, sceneId: targetScene, angle, pitch, yaw, hovImage, tex
             <button 
 				className="button"
                 onClick={addHovImage()} 
-                style={{ margin: "0px 5px" }}
+                style={{ margin: "10px 5px" }}
             >
                 Adicionar prévia
             </button>
-            <button className="button" onClick={removeHotspot()}>
+            <button 
+				className="button" 
+				onClick={removeHotspot()}
+				style={{ margin: "10px 5px" }}
+			>
                 Remover
             </button>
 
