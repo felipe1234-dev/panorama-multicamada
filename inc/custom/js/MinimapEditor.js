@@ -36,7 +36,7 @@ const MinimapEditor = () => {
 	
 		const uploader = {
 			config: {
-				title: `Selecione a imagem da planta para a camada ${layerIndex}`,
+				title: `Selecione a imagem da planta para a camada ${layerIndex + 1}`,
 				library: {
 					type : ['image']
 				},
