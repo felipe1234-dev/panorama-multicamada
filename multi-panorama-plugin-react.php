@@ -56,7 +56,7 @@ function load_admin_files() {
     wp_enqueue_style(
         "hotspots-editor", 
         plugin_dir_url(__FILE__ )."inc/custom/css/hotspots-editor.css", 
-        false, "1.4", false
+        false, "1.5", false
     );
     wp_enqueue_style(
         "day-toggler", 
@@ -82,17 +82,17 @@ function load_admin_files() {
 	wp_enqueue_script(
         "panorama-help-functions", 
         plugin_dir_url(__FILE__)."inc/custom/js/help-functions.js", 
-        false, "1.5", false
+        false, "1.6", false
     );
 	wp_enqueue_script(
         "panorama-hotspots-editor", 
         plugin_dir_url(__FILE__)."inc/custom/js/HotSpotsEditor.js", 
-        false, "1.6", true
+        false, "3.0", true
     );
 	wp_enqueue_script(
         "panorama-minimap-editor", 
         plugin_dir_url(__FILE__)."inc/custom/js/MinimapEditor.js", 
-        false, "1.2", true
+        false, "1.3", true
     );
 	wp_enqueue_script(
         "panorama-scenes-editor", 
