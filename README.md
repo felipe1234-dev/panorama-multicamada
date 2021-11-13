@@ -1,18 +1,20 @@
 
 <h1 align="center">
     <br />
-    <img src="inc/media/360_icon.png" alt="360_globe" width="200" />
+    <p align="center">
+    	<img src="inc/media/360_icon.png" alt="360_globe" width="200" />
+    </p>
     <br />
     Panorama Multicamada v6
     <br />
 </h1>
 
 <h4 align="center">
-    Adiciona widget de panorama ao elementor com diversas funcionalidades: camadas, imagem de overlay, prévia dos comodos, dia e noite, minimapa, etc.
+    Adiciona widget de panorama ao elementor com diversas funcionalidades: camadas, imagem de overlay, prévia dos cômodos, dia e noite, minimapa, etc.
 </h4>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
+  <a href="#principais-funcionalidades">Principais Funcionalidades</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#como-baixar">Como baixar</a> •
   <a href="#credits">Credits</a> •
@@ -20,29 +22,26 @@
   <a href="#license">License</a>
 </p>
 
-![Demo](gifs/demo_gif.gif)
+<p align="center">
+  <img src="gifs/demo_gif_2.gif" alt="Gif de demonstração" width="100%" />
+  <br />
+  <i>Projeto da empresa <a href="https://atosprojetos.com.br/unaxoffshore/">Atos Projetos</a> feito com o nosso plugin ❤️</i>
+</p>
 
-Projeto de [Atos Projetos](https://atosprojetos.com.br/unaxoffshore/)
+## Principais Funcionalidades
 
-## Key Features
-
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+* Minimapa 
+  - Um pequeno minimapa pode ser adicionado ao seu panorama para mostrar onde você está em relação a outros pontos do minimapa.
+* Dia e Noite
+  - Você pode fazer uma versão de dia e de noite do mesmo panorama.
+* Camadas ou "andares"
+  - Se a sua construção conta com vários andares ou pavimentos, você pode adicionar e aparecerá no minimapa.
+* Prévias
+  - Ao passar o mouse por cima de um "hot spot", um pequeno balãozinho irá aparecer mostrando o outro cômodo. Você também pode deixar apenas um texto.
+* Editor rico de opções! Você pode:
+  - Mudar a proporção do minimapa e das bolinhas do minimapa, tanto na versão de celular, quanto de desktop.
+  - Mudar a imagem de Overlay.
+  - Habilitar/Desabilitar elementos.
 
 ## How To Use
 
@@ -65,9 +64,9 @@ $ npm start
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 
-## Download
+## Como baixar
 
-Você  <a href="./multi-panorama-plugin-react.zip" download="./multi-panorama-plugin-react.zip">download</a> the latest installable version of Markdownify for Windows, macOS and Linux.
+Você deve baixar clicando neste <a href="./multi-panorama-plugin-react.zip" download="./multi-panorama-plugin-react.zip">link</a>, em seguida, vá até o seu WordPress e passe o mouse por cima de ***Plugins*** *(barra lateral)* > ***Adicionar Novo*** > ***Carregar plugin*** *(topo)* > ***Escolher Arquivo*** e escolha o arquivo Zip que foi baixado, e **Instalar**.
 
 ## Emailware
 
