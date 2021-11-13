@@ -119,7 +119,7 @@ const getLayerIndex = searchId => {
 const getCurrScene = panEditor => {
     const { panorama } = getConfig();
 
-    return panEditor && panEditor.isLoaded() ? panEditor.getScene() : panorama[getTheme()].default.firstScene;
+    return panEditor ? panEditor.getScene() : panorama[getTheme()].default.firstScene;
 }
 
 // usado para fazer um tooltip mais da hora
@@ -141,7 +141,7 @@ const tooltipConstructor = (hotSpotDiv, args) => {
     } 
 	else if (title) {
 		span.style.cssText = `
-			left: 120px;
+			left: 132.5px;
 			bottom: -90px;
 			z-index: 100;
 			width: 200px;
