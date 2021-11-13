@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="#principais-funcionalidades">Principais Funcionalidades</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#como-usar">Criando Seu Primeiro Panorama</a> •
   <a href="#como-baixar">Como baixar</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <img src="gifs/demo_gif_2.gif" alt="Gif de demonstração" width="100%" />
+  <img src="gifs/demo_2.gif" alt="Gif de demonstração" width="100%" />
   <br />
   <i>Projeto da empresa <a href="https://atosprojetos.com.br/unaxoffshore/">Atos Projetos</a> feito com o nosso plugin ❤️</i>
 </p>
@@ -35,7 +35,7 @@
 * Dia e Noite
   - Você pode fazer uma versão de dia e de noite do mesmo panorama.
 * Camadas ou "andares"
-  - Se a sua construção conta com vários andares ou pavimentos, você pode adicionar e aparecerá no minimapa.
+  - Se a sua construção conta com vários andares ou pavimentos, você pode adicioná-los que aparecerão no minimapa.
 * Prévias
   - Ao passar o mouse por cima de um "hot spot", um pequeno balãozinho irá aparecer mostrando o outro cômodo. Você também pode deixar apenas um texto.
 * Editor rico de opções! Você pode:
@@ -43,30 +43,45 @@
   - Mudar a imagem de Overlay.
   - Habilitar/Desabilitar elementos.
 
-## How To Use
+## Como Usar
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Copie e cole o shortcode do plugin no Elementor:
 
-```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
-
-# Go into the repository
-$ cd electron-markdownify
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
 ```
+[panorama-multicamada id='45' largura='100%' altura='500px']
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+```
+Todos esses parâmetros podem ser mudados (id, largura e altura).
+O id tem que ser correspondente ao id do panorama.
 
+### Passo 1
 
-## Como baixar
+* Verifique algumas primeiras configurações
+* Adicione uma camada no botão "Adicionar Camada"
 
-Você deve baixar clicando neste <a href="./multi-panorama-plugin-react.zip" download="./multi-panorama-plugin-react.zip">link</a>, em seguida, vá até o seu WordPress e passe o mouse por cima de ***Plugins*** *(barra lateral)* > ***Adicionar Novo*** > ***Carregar plugin*** *(topo)* > ***Escolher Arquivo*** e escolha o arquivo Zip que foi baixado, e **Instalar**.
+![Passo 1](gifs/tutorial_step_1.gif)
+
+<hr />
+
+### Passo 2 
+
+* Adicione mais cenas se precisar
+
+![Passo 2](gifs/tutorial_step_2.gif)
+
+<hr />
+
+### Passo 3
+
+* Adicione um Hot Spot
+* Configure o local para onde ele entra
+* Adicione uma imagem de prévia
+
+![Passo 3](gifs/tutorial_step_3.gif)
+
+## Como Baixar
+
+Você deve baixar clicando neste <a href="https://github.com/felipe1234-dev/panorama-multicamada/raw/main/multi-panorama-plugin-react.zip">link</a>, em seguida, vá até o seu WordPress e passe o mouse por cima de ***Plugins*** *(barra lateral)* > ***Adicionar Novo*** > ***Carregar plugin*** *(topo)* > ***Escolher Arquivo*** e escolha o arquivo Zip que foi baixado, e **Instalar**.
 
 ## Emailware
 
