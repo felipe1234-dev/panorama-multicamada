@@ -1,30 +1,28 @@
 
 <h1 align="center">
     <br />
-    <a href="http://www.amitmerchant.com/electron-markdownify">
-        <img 
-            src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200" 
-        />
-    </a>
+    <img src="inc/media/360_icon.png" alt="360_globe" width="200" />
     <br />
-    Panorama Multicamada
+    Panorama Multicamada v6
     <br />
 </h1>
 
 <h4 align="center">
-    Adiciona widget de panorama ao elementor
+    Adiciona widget de panorama ao elementor com diversas funcionalidades: camadas, imagem de overlay, prévia dos comodos, dia e noite, minimapa, etc.
 </h4>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
+  <a href="#como-baixar">Como baixar</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![Demo](gifs/demo_gif.gif)
+
+Projeto de [Atos Projetos](https://atosprojetos.com.br/unaxoffshore/)
 
 ## Key Features
 
@@ -69,7 +67,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## Download
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
+Você  <a href="./multi-panorama-plugin-react.zip" download="./multi-panorama-plugin-react.zip">download</a> the latest installable version of Markdownify for Windows, macOS and Linux.
 
 ## Emailware
 
