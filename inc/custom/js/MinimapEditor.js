@@ -145,6 +145,7 @@ const MiListItem = ({ id, x, y, sceneId: itemScene, layerId, layerIndex, itemInd
                 name="minimap-item x" 
                 placeholder="X (em %)"
                 property="x" onChange={editMiItem()}
+                style={{ margin: "5px" }}
             /> 
                             
             <input 
@@ -152,11 +153,13 @@ const MiListItem = ({ id, x, y, sceneId: itemScene, layerId, layerIndex, itemInd
                 name="minimap-item y" 
                 placeholder="Y (em %)"
                 property="y" onChange={editMiItem()}
+                style={{ margin: "5px" }}
             /> 
 
             <select 
                 id={`mi-items-${id}`} name={`mi-items-${id}`}
                 property="sceneId" onChange={editMiItem()}
+                style={{ margin: "5px" }}
             >
                 {getScenes().map(({ imgId, title }) => (
                     <option 
@@ -171,6 +174,7 @@ const MiListItem = ({ id, x, y, sceneId: itemScene, layerId, layerIndex, itemInd
             <button 
                 className="button" remove-mi-item="true"
                 onClick={removeMiItem()}
+                style={{ margin: "5px" }}
             >
                 Remover
             </button> 
