@@ -1,111 +1,115 @@
-
 <h1 align="center">
     <br />
     <p align="center">
-    	<img src="inc/media/360_icon.png" alt="360_globe" width="200" />
+      <img 
+        src="inc/media/360_icon.png"   alt="360_globe" 
+        width="200" 
+      />
     </p>
     <br />
-    Panorama Multicamada v6
+    Multilayer Panorama v6
     <br />
 </h1>
 
 <h4 align="center">
-    Adiciona widget de panorama ao elementor com diversas funcionalidades: camadas, imagem de overlay, prévia dos cômodos, dia e noite, minimapa, etc.
+    Adds panorama widget to Elementor with various features: layers, overlay image, room preview, day and night toggler, minimap, etc.
 </h4>
 
 <p align="center">
-  <a href="#principais-funcionalidades">Principais Funcionalidades</a> •
-  <a href="#como-usar">Criando Seu Primeiro Panorama</a> •
-  <a href="#como-baixar">Como baixar</a> •
-  <a href="#creditos">Créditos</a> •
-  <a href="#linguagens-usadas">Linguagens Usadas</a> •
-  <a href="#licenc-a">Licença</a>
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">Creating Your First Panorama</a> •
+  <a href="#how-to-download">How to download</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#used-languages">Used Languages</a> •
+  <a href="#license-a">License</a>
 </p>
 
 <p align="center">
-  <img src="gifs/demo_2.gif" alt="Gif de demonstração" width="100%" />
+  <img 
+    src="gifs/demo_2.gif" 
+    alt="Demo gif" 
+    width="100%" 
+  />
   <br />
-  <i>Projeto da empresa <a href="https://atosprojetos.com.br/unaxoffshore/">Atos Projetos</a> feito com o nosso plugin ❤️</i>
+  <i><a href="https://atosprojetos.com.br/unaxoffshore/">Atos Projetos</a>'s project made with my plugin ❤️</i>
 </p>
 
-## Principais Funcionalidades
+## Main Features
 
-* Minimapa 
-  - Um pequeno minimapa pode ser adicionado ao seu panorama para mostrar onde você está em relação a outros pontos do minimapa.
-* Dia e Noite
-  - Você pode fazer uma versão de dia e de noite do mesmo panorama.
-* Camadas ou "andares"
-  - Se a sua construção conta com vários andares ou pavimentos, você pode adicioná-los que aparecerão no minimapa.
-* Prévias
-  - Ao passar o mouse por cima de um "hot spot", um pequeno balãozinho irá aparecer mostrando o outro cômodo. Você também pode deixar apenas um texto.
-* Editor rico de opções! Você pode:
-  - Mudar a proporção do minimapa e das bolinhas do minimapa, tanto na versão de celular, quanto de desktop.
-  - Mudar a imagem de Overlay.
-  - Habilitar/Desabilitar elementos.
+* minimap
+  - A small minimap can be added to your panorama to show where you are in relation to other points on the minimap.
+* Day and night
+  - You can make a day and night version of the same panorama.
+* Layers or "floors"
+  - If your building has several floors or floors, you can add them which will appear on the minimap.
+* Previews
+  - When passing the mouse over a "hot spot", a small balloon will appear showing the other room. You can also just leave a text.
+* Rich editor of options! You may:
+  - Change the proportion of the minimap and minimap dots, both in mobile and desktop versions.
+  - Change Overlay image.
+  - Enable/Disable elements.
 
-## Como Usar
+## How to use
 
-Copie e cole o shortcode do plugin no Elementor:
-
-```
-[panorama-multicamada id='45' largura='100%' altura='500px']
+Copy and paste the plugin shortcode into Elementor:
 
 ```
-Todos esses parâmetros podem ser mudados (id, largura e altura).
-O id tem que ser correspondente ao id do panorama.
+[multilayer-panorama id='45' width='100%' height='500px']
 
-### Passo 1
+```
+All these parameters can be changed (id, width and height).
+The id has to match the panoramas id.
 
-* Verifique algumas primeiras configurações
-* Adicione uma camada no botão "Adicionar Camada"
+### Step 1
 
-![Passo 1](gifs/tutorial_step_1.gif)
+* Check some first settings
+* Add a layer in the "Add Layer" button
 
-<hr />
-
-### Passo 2 
-
-* Adicione mais cenas se precisar
-
-![Passo 2](gifs/tutorial_step_2.gif)
+![Step 1](gifs/tutorial_step_1.gif)
 
 <hr />
 
-### Passo 3
+### Step 2
 
-* Adicione um Hot Spot
-* Configure o local para onde ele entra
-* Adicione uma imagem de prévia
+* Add more scenes if you need
 
-![Passo 3](gifs/tutorial_step_3.gif)
+![Step 2](gifs/tutorial_step_2.gif)
 
 <hr />
 
-### Passo 4
+### Step 3
 
-* Troque a imagem da planta no botão "Modificar Planta"
-* Clique em posições no mapa para adicionar items 
-* Configure para qual cena cada item redireciona
+* Add a Hot Spot
+* Configure the location where it enters
+* Add a preview image
 
-![Passo 4](gifs/tutorial_step_4.gif)
+![Step 3](gifs/tutorial_step_3.gif)
 
-## Como Baixar
+<hr />
 
-Você deve baixar clicando neste <a href="https://github.com/felipe1234-dev/panorama-multicamada/raw/main/multi-panorama-plugin-react.zip">link</a>, em seguida, vá até o seu WordPress e passe o mouse por cima de ***Plugins*** *(barra lateral)* > ***Adicionar Novo*** > ***Carregar plugin*** *(topo)* > ***Escolher Arquivo*** e escolha o arquivo Zip que foi baixado, e **Instalar**.
+### Step 4
 
-## Créditos
+* Change the plant image in the "Modify Plant" button
+* Click on positions on the map to add items
+* Configure which scene each item redirects to
 
-Este plugin usa os seguintes pacotes de fonte aberta:
+![Step 4](gifs/tutorial_step_4.gif)
+
+## How to download
+
+You must download by clicking this <a href="https://github.com/felipe1234-dev/panorama-multicamada/raw/main/multi-panorama-plugin-react.zip">link</a> then go to your WordPress and hover over ***Plugins*** *(sidebar)* > ***Add New*** > ***Load plugin*** *(top)* > ***Choose File*** and choose the Zip file that was downloaded, and **Install**.
+
+## Credits
+
+This plugin uses the following open source packages:
 
 - [React](https://reactjs.org/)
 - [Pannellum](https://pannellum.org/)
 
-## Linguagens Usadas
+## Languages ​​Used
 
-PHP, JavaScript, CSS e HTML.
+PHP, JavaScript, CSS and HTML.
 
-## Licença
+## License
 
 MIT
-
----
